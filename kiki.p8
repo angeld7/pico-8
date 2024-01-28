@@ -80,7 +80,7 @@ function player_update()
 	player.y+=update_movement(⬇️)
 	player.y-=update_movement(⬆️) 
 
-	--collision
+	--check borders
 	player.x=max(0,player.x)
 	player.y=max(0,player.y)
 	player.x=min(120,player.x)
