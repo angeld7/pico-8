@@ -20,6 +20,10 @@ function update_movement(direction)
 	return 0
 end
 
+function player_draw()
+    spr(player.sp,player.x,player.y,1,1,player.flp)
+end
+
 function player_animate()
 
 end

@@ -1,12 +1,14 @@
 function _update()
 	player_update()
 	player_animate()
+	map_update()
 end
 
 function _draw()
-	cls()
+	cls(12)
+	palt(12,true)
 	palt(0,false)
-	palt(13,true)
-	map(0,0)
-	spr(player.sp,player.x,player.y,1,1,player.flp)
+	map_background_draw()
+	player_draw()
+	map_foreground_draw()
 end
