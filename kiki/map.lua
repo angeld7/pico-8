@@ -18,7 +18,7 @@ end
 function map_update()
     distant_x=layer_position(distant_x, 1)
     background_x=layer_position(background_x,2)
-    foreground_x=layer_position(foreground_x,4)
+    foreground_x=layer_position(foreground_x,3)
 end
 
 function draw_layer(layer_tile_x, layer_x)

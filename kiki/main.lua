@@ -1,6 +1,7 @@
 function _update()
 	player_update()
 	player_animate()
+	enemies_update()
 	map_update()
 end
 
@@ -10,5 +11,6 @@ function _draw()
 	palt(0,false)
 	map_background_draw()
 	player_draw()
+	enemies_draw()
 	map_foreground_draw()
 end

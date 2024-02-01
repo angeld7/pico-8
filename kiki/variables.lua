@@ -6,7 +6,7 @@ function _init()
 		w=8,
 		h=8,
 		speed=3
-	}	
+	}
 	obsticles=0
     location=0
     bg_update_fps=1
