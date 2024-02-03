@@ -5,7 +5,9 @@ function _init()
 		y=59,
 		w=8,
 		h=8,
-		speed=3
+		speed=3,
+		moving_x=false,
+		moving_y=false
 	}
 	obsticles=0
     location=0
