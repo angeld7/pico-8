@@ -1,6 +1,7 @@
 
 rainbow={}
 rainbow_sp=2
+
 function player_update()	
 
 	--set moving flags
@@ -30,6 +31,7 @@ function rainbow_update()
 		local y = player.y
 		rainbow_new[i] = { x=x, y=y }
 	end
+
 	for i in pairs(rainbow) do
 		local seg = rainbow[i]
 		seg.x-=1
@@ -43,11 +45,13 @@ end
 
 function rainbow_draw()
 	palt(12,false)
+	palt(0,true)
 	-- printh(rainbow[0].x)
 	for i in pairs(rainbow) do
 		local seg = rainbow[i]
 		spr(rainbow_sp,seg.x,seg.y,1,1,false)
 	end
+	palt(0,false)
 	palt(12,true)
 end
 
