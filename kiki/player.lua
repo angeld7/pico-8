@@ -1,6 +1,8 @@
 
 rainbow={}
 rainbow_sp=2
+map_max=120
+map_min=0
 
 function player_update()	
 
@@ -13,11 +15,15 @@ function player_update()
 	dy-=update_movement(⬆️)
 
 	--check borders
-	if player.x+dx > 120 or player.x+dx < 0 then
-		dx=0
+	if player.x+dx > map_max then
+		dx=map_max-player.x
+	elseif player.x+dx < map_min then
+		dx=-player.x
 	end
-	if player.y+dy > 120 or player.y+dy < 0 then
-		dy=0
+	if player.y+dy > map_max then
+		dy=map_max-player.y
+	elseif player.y+dy < map_min then
+		dy=-player.y
 	end
 
 	rainbow_update(player.x+4, player.y, dx, dy)
@@ -38,7 +44,7 @@ function rainbow_update(x,y,dx,dy)
 	for n in pairs(rainbow) do
 		local seg = rainbow[n]
 		seg.x-=1
-		if seg.x>=-8 then	
+		if seg.x>=-8 and i <= map_max then	
 			i+=1
 			rainbow_new[i]=seg
 		end
@@ -58,7 +64,6 @@ end
 function rainbow_draw()
 	palt(12,false)
 	palt(0,true)
-	-- printh(rainbow[0].x)
 	for i in pairs(rainbow) do
 		local seg = rainbow[i]
 		spr(rainbow_sp,seg.x,seg.y,1/8,1,false)

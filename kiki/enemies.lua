@@ -19,7 +19,7 @@ local enemies_x = {
 
 function enemies_update()
     for i,_ in pairs(enemies_x) do     
-        enemies_x[i] = enemies_x[i] - rnd(5), 0
+        enemies_x[i] = enemies_x[i] - rnd(5)
         if enemies_x[i] <= 0 then
             enemies_x[i] = 129
         end
